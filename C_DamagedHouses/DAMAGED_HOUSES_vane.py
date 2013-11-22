@@ -88,7 +88,7 @@ with open('DAMAGED_HOUSES_web2py.csv', 'wb') as f:
           row = rownum.split(',')
           if len(row) > 1 and counter > 0:
                print unicode(row[4])
-               writer.writerow( ('Incidents Monitored', sheet.cell(2,1).value, organization, calamityname.upper(),'Philippines', ('REGION '+ row[2]), row[3], row[4], 'STD-Lon', 'STD-Lat', aDate, aTime, row[5], row[6], row[7].strip() )) 
+               writer.writerow( ('Damaged Houses', sheet.cell(2,1).value, organization, calamityname.upper(),'Philippines', ('REGION '+ row[2]), row[3], row[4], 'STD-Lon', 'STD-Lat', aDate, aTime, row[5], row[6], row[7].strip() )) 
           counter = 1
 f.close()
 print 'web2py'
