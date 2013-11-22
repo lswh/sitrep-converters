@@ -57,12 +57,12 @@ for row_index in range(sheet.nrows):
         print sheet.cell(row_index,col_index).value
 
 #This writes the original xls file (first sheet for index 0) into a csv file.
-sheet = book.sheet_by_index(book.nsheets-1)
-fp = open(('B_Casualties.csv'), 'wb')
-wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
-for rownum in xrange(sheet.nrows):
-     wr.writerow([unicode(val).encode('utf8') for val in sheet.row_values(rownum)])
-fp.close()
+#sheet = book.sheet_by_index(book.nsheets-1)
+#fp = open(('B_Casualties.csv'), 'wb')
+#wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
+#for rownum in xrange(sheet.nrows):
+#     wr.writerow([unicode(val).encode('utf8') for val in sheet.row_values(rownum)])
+#fp.close()
 
 
 #This rewrites a new csv file formatted according to proposed geocoded shapefile join table
