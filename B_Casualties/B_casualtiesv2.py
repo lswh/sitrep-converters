@@ -8,7 +8,7 @@ import csv
 
 
 rb = open_workbook('B_Casualties.xls',formatting_info=True)
-r_sheet = rb.sheet_by_index(0) # read only copy to introspect the file
+r_sheet = rb.sheet_by_index(book.nsheets-1) # read only copy to introspect the file
 wb = copy(rb) # a writable copy (I can't read values out of this, only write to it)
 w_sheet = wb.get_sheet(0) # the sheet to write to within the writable copy
 
@@ -27,7 +27,7 @@ for row_index in xrange(r_sheet.nrows):
 wb.save('B_Casualties.xls')
 
 rb = open_workbook('B_Casualties.xls',formatting_info=True)
-r_sheet = rb.sheet_by_index(0) # read only copy to introspect the file
+r_sheet = rb.sheet_by_index(book.nsheets-1) # read only copy to introspect the file
 wb = copy(rb) # a writable copy 
 w_sheet = wb.get_sheet(0) # the sheet to write to within the writable copy
 counter=0
@@ -47,7 +47,7 @@ wb.save('B_Casualties.xls')
 
 #This prints cell values on terminal
 book = open_workbook('B_Casualties.xls')
-sheet = book.sheet_by_index(0)
+sheet = book.sheet_by_index(book.nsheets-1)
 print sheet.name
 print sheet.nrows
 print sheet.ncols
@@ -57,7 +57,7 @@ for row_index in range(sheet.nrows):
         print sheet.cell(row_index,col_index).value
 
 #This writes the original xls file (first sheet for index 0) into a csv file.
-sheet = book.sheet_by_index(0)
+sheet = book.sheet_by_index(book.nsheets-1)
 fp = open(('B_Casualties.csv'), 'wb')
 wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
 for rownum in xrange(sheet.nrows):

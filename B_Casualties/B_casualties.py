@@ -5,8 +5,8 @@ import csv
 import sys 
 
 #This prints cell values on terminal
-book = open_workbook('B_Casualties2_test.xls')
-sheet = book.sheet_by_index(0)
+book = open_workbook('B_Casualties.xls')
+sheet = book.sheet_by_index(book.nsheets-1)
 print sheet.name
 print sheet.nrows
 print sheet.ncols
@@ -16,7 +16,7 @@ for row_index in range(sheet.nrows):
         print sheet.cell(row_index,col_index).value
 
 #This writes the original xls file (first sheet for index 0) into a csv file.
-sheet = book.sheet_by_index(0)
+sheet = book.sheet_by_index(book.nsheets-1)
 fp = open(('B_Casualties2_test.csv'), 'wb')
 wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
 for rownum in xrange(sheet.nrows):
