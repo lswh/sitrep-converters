@@ -5,7 +5,7 @@ from xlutils.copy import copy # http://pypi.python.org/pypi/xlutils
 from xlwt import easyxf # http://pypi.python.org/pypi/xlwt
 import sys
 import csv
-import time
+
 
 rb = open_workbook('B_Casualties.xls',formatting_info=True)
 r_sheet = rb.sheet_by_index(book.nsheets-1) # read only copy to introspect the file
