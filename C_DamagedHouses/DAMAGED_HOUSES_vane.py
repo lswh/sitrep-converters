@@ -81,7 +81,7 @@ with open('DAMAGED_HOUSES_web2py.csv', 'wb') as f:
      aTime = time.strftime("%I:%M %p", reportDate)
      
      writer = csv.writer(f, quoting=csv.QUOTE_ALL)
-     writer.writerow( ('Template', 'Series', 'Organisation', 'STD-WHO', 'STD-L0', 'STD-L1', 'STD-L2', 'STD-L3', 'STD-Lon', 'STD-Lat', 'STD-DATE', 'STD-TIME', 'IM1', 'IM2', 'IM3', 'IM4') )
+     writer.writerow( ('Template', 'Series', 'Organisation', 'STD-WHO', 'STD-L0', 'STD-L1', 'STD-L2', 'STD-L3', 'STD-Lon', 'STD-Lat', 'STD-DATE', 'STD-TIME', 'IM1', 'IM2', 'IM3') )
           
      counter = 0
      for rownum in fshp.read().replace("\"","").split('\n'):
