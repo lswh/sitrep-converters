@@ -117,13 +117,17 @@ with open('B_Casualties_web2py.csv', 'wb') as f:
      writer = csv.writer(f, quoting=csv.QUOTE_ALL)
  #CAS stands for: Name, Age, Gender, Address, Casualty Type, Dead Count, 
      writer.writerow( ('Template', 'Series', 'Organisation', 'STD-WHO', 'STD-L0', 'STD-L1', 'STD-L2', 'STD-L3', 'STD-Lon', 'STD-Lat', 'STD-DATE', 'STD-TIME', 'CAS1', 'CAS2', 'CAS3', 'CAS4', 'CAS5', 'CAS6', 'CAS7', 'CAS8' ) )
-          
+
+#Current result
+# Casualties, CASUALTIES, JICA, TYPHOON, PHILS, REGION PROVINCE, SURNAME, FIRSTNAME, LON, LAT, TAMANG DATE, TAMANG TIME, CAS1 - 27/M, CAS2 SARIAYA address 1, CAS3 QUEZON address 2, CAS4 to CAS 8 is empty
+
+
      counter = 0
      for rownum in fshp.read().replace("\"","").split('\n'):
           row = rownum.split(',')
           if len(row) > 1 and counter > 0:
                print unicode(row[4])
-               writer.writerow( ('Casualties', sheet.cell(2,1).value, organization, calamityname.upper(),'Philippines', ('REGION '+ row[2]), row[3], row[4], 'STD-Lon', 'STD-Lat', aDate, aTime, row[5], row[6], row[7].strip() )) 
+               writer.writerow( ('Casualties', sheet.cell(2,1).value, organization, calamityname,'Philippines', 'REGION', row[2], 'MUNICIPALITY', 'STD-Lon', 'STD-Lat', aDate, aTime, row[4], row[5], row[7].strip() )) 
           counter = 1
 f.close()
 print 'web2py'
