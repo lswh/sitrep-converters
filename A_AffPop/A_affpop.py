@@ -19,45 +19,30 @@ for row_index in range(sheet.nrows):
         print sheet.cell(row_index,col_index).value
 
 #This writes the original xls file (first sheet for index 0) into a csv file.
-sheet = book.sheet_by_index(0)
+sheet = book.sheet_by_index(book.nsheets-1)
 fp = open(('AffPop_raw.csv'), 'wb')
 wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
 for rownum in xrange(sheet.nrows):
      wr.writerow([unicode(val).encode('utf8') for val in sheet.row_values(rownum)])
 fp.close()
 
-
-#VANE
-#This prints cell values on terminal
-book = open_workbook('DAMAGED HOUSES.xls', formatting_info=True)
-sheet = book.sheet_by_index(book.nsheets-1)
-print book.nsheets
-print sheet.name
-print sheet.nrows
-print sheet.ncols
-print sheet.cell(22,2).xf_index
-fmt = book.xf_list[sheet.cell(21,2).xf_index]
-print fmt.alignment.hor_align
-##for row_index in range(sheet.nrows):
-##    for col_index in range(sheet.ncols):
-##        print cellname(row_index,col_index),'-',
-##        print sheet.cell(row_index,col_index).value
-
-#This writes the original xls file (first sheet for index 0) into a csv file.
-##sheet = book.sheet_by_index(6)
-##fp = open(('DAMAGED_HOUSES.csv'), 'wb')
-##wr = csv.writer(fp, quoting=csv.QUOTE_ALL)
-####wr = csv.writer(fp, delimiter=',', quoting=csv.QUOTE_NONE)
-##for rownum in xrange(sheet.nrows):
-##     wr.writerow([unicode(val).encode('utf8') for val in sheet.row_values(rownum)])
-##fp.close()
-
-
 #This rewrites a new csv file formatted according to proposed geocoded shapefile join table
 with open('Affected_Population_SHP.csv', 'wb') as f:
      writer = csv.writer(f, quoting=csv.QUOTE_ALL)
      writer.writerow( ('SR_NO', 'TYPE', 'REGION', 'PROVINCE', 'MUNICIPALITY', 'PROVGEOCODE', 'MUNIGEOCODE', 'AFFBGYS', 'AFFFAMILIES', 'AFFPERSONS', 'EVACCTRS', 'IEC_FAM', 'IEC_PERSONS', 'OEC_FAM', 'OEC_PERSONS', 'SERVED_FAMS', 'SERVED_PERSONS') )
      calamityname = raw_input("What type of calamity is this?")
+
+
+
+
+
+#print sheet.cell(22,2).xf_index
+#fmt = book.xf_list[sheet.cell(21,2).xf_index]
+#print fmt.alignment.hor_align
+
+
+
+
     
      regCounter = 0
      provCounter = 1

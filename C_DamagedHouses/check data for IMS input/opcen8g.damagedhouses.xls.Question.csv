@@ -1,0 +1,4 @@
+Template,Template Description,Complete Question,Date Question,Time Question,Location Detail,Priority Question,Section,Section Position,Question,Question Type,Question Notes,Question Position,Question Code,Meta Data
+Damaged Houses,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Damaged Houses,1,Partially Damaged Houses,Numeric,,1,DH1,
+Damaged Houses,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Damaged Houses,1,Wholly Damaged Houses,Numeric,,2,DH2,
+Damaged Houses,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Damaged Houses,1,Total of Damaged Houses,Numeric,,3,DH3,
