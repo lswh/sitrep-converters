@@ -1,0 +1,6 @@
+Template,Template Description,Complete Question,Date Question,Time Question,Location Detail,Priority Question,Section,Section Position,Question,Question Type,Question Notes,Question Position,Question Code,Meta Data
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Name,Numeric,,1,CAS1,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Age,Numeric,,2,CAS2,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Complete Address,Numeric,,3,CAS3,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Casualty Type,Option,,4,CAS4,"{'Length': '3', '1': 'Dead', '2': 'Missing', '3': 'Injured'}"
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Remarks,Text,,5,CAS5,

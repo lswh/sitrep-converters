@@ -1,0 +1,10 @@
+Template,Series,Organisation,STD-L0,STD-L1,STD-L2,STD-L3,STD-Lon,STD-Lat,STD-DATE,STD-TIME,CAS1,CAS2,CAS3,CAS4,CAS5
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.3,14.1,19/01/12,,5,2,3,1,6
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.4,14.2,19/01/12,,10,4,6,2,12
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.5,14.3,19/01/12,,15,6,9,3,18
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.6,14.4,19/01/12,,20,8,12,1,24
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.7,14.5,19/01/12,,25,10,15,2,30
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.8,14.6,19/01/12,,30,12,18,3,36
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,120.9,14.7,19/01/12,,35,14,21,1,42
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,121,14.8,19/01/12,,40,16,24,2,48
+Casualties,Disaster2,JICA OCD,PH,NCR,Province,Municipality,121.1,14.9,19/01/12,,45,18,27,3,54
