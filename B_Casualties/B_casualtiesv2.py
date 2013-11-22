@@ -66,7 +66,7 @@ fp.close()
 
 
 #This rewrites a new csv file formatted according to proposed geocoded shapefile join table
-with open('B_Casualties.csv', 'wb') as f:
+with open('B_Casualties_SHP.csv', 'wb') as f:
     writer = csv.writer(f)
     writer.writerow( ('SR_NO', 'TYPE', 'PROVINCE', 'NAME', 'AGE', 'ADDRESS', 'REMARKS', 'DATETIME', 'DEAD', 'INJURED', 'MISSING', 'TAGCHECK') )
     calamityname = raw_input("What type of calamity is this?")
@@ -103,3 +103,27 @@ with open('B_Casualties.csv', 'wb') as f:
                         counter = 1
 f.close()
 
+#This rewrites the csv to fit the Data template required by the web2py system
+with open('B_Casualties_web2py.csv', 'wb') as f:
+     fshp = open('B_Casualties_SHP.csv', 'rb')
+
+     organization = 'JICA / OCD'
+
+     #Formats date and time from the report
+     reportDate = time.strptime(str(sheet.cell(3, 1).value), "%d %B %Y, %H:%M %p")
+     aDate = time.strftime("%d/%m/%y", reportDate)
+     aTime = time.strftime("%I:%M %p", reportDate)
+     
+     writer = csv.writer(f, quoting=csv.QUOTE_ALL)
+ #CAS stands for: Name, Age, Gender, Address, Casualty Type, Dead Count, 
+     writer.writerow( ('Template', 'Series', 'Organisation', 'STD-WHO', 'STD-L0', 'STD-L1', 'STD-L2', 'STD-L3', 'STD-Lon', 'STD-Lat', 'STD-DATE', 'STD-TIME', 'CAS1', 'CAS2', 'CAS3', 'CAS4', 'CAS5', 'CAS6', 'CAS7', 'CAS8' ) )
+          
+     counter = 0
+     for rownum in fshp.read().replace("\"","").split('\n'):
+          row = rownum.split(',')
+          if len(row) > 1 and counter > 0:
+               print unicode(row[4])
+               writer.writerow( ('Casualties', sheet.cell(2,1).value, organization, calamityname.upper(),'Philippines', ('REGION '+ row[2]), row[3], row[4], 'STD-Lon', 'STD-Lat', aDate, aTime, row[5], row[6], row[7].strip() )) 
+          counter = 1
+f.close()
+print 'web2py'

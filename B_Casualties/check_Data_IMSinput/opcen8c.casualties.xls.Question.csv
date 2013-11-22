@@ -1,6 +1,9 @@
 Template,Template Description,Complete Question,Date Question,Time Question,Location Detail,Priority Question,Section,Section Position,Question,Question Type,Question Notes,Question Position,Question Code,Meta Data
-Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Name,Numeric,,1,CAS1,
-Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Age,Numeric,,2,CAS2,
-Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Complete Address,Numeric,,3,CAS3,
-Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Casualty Type,Option,,4,CAS4,"{'Length': '3', '1': 'Dead', '2': 'Missing', '3': 'Injured'}"
-Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon', 'Map']",Priority,Casualties,1,Remarks,Text,,5,CAS5,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Name,Text,,1,CAS1,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Age ,Numeric,,2,CAS2,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Gender,Text,,3,CAS3,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Complete Address,Text,,4,CAS4,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Casualty Type,Text,,5,CAS5,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Dead Count,Numeric,,6,CAS6,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Injured Count,Numeric,,7,CAS7,
+Casualties,This is OpCen workflow template,Calamity,Date,Time,"['L0', 'L1', 'L2', 'L3', 'Lat', 'Lon']",Priority,Casualties,1,Missing Count,Numeric,,8,CAS8,
