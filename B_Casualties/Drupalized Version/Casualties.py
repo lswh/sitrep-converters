@@ -14,7 +14,7 @@ w_sheet = wb.get_sheet(0) # the sheet to write to within the writable copy
 
 #Transfer DEAD MISSING AND INJURED LABELS ELSEWHERE
 for row_index in xrange(r_sheet.nrows):
-    casualtytype = r_sheet.cell(row_index, 3).value.encode('ascii', 'ignore').upper()
+    casualtytype = r_sheet.cell(row_index, 3).value.upper()
     if casualtytype == "DEAD":
         w_sheet.write(row_index, r_sheet.ncols, "DEAD")
     elif casualtytype == "INJURED":
@@ -75,31 +75,31 @@ with open('B_Casualties_SHP.csv', 'wb') as f:
             #This conditional will eliminate NAME, MISSING, DEAD, INJURED rows from main entries
             if len(sheet.cell(rownum,3).value)>7 & len(sheet.cell(rownum, sheet.ncols-1).value)==4:
                 if len(sheet.cell(rownum,1).value)>0:
-                    writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell(rownum,1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,2).value, 0, 0, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                    writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell(rownum,1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), sheet.cell(rownum,2).value, 0, 0, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                 else:
                 #This will repeat the province name for empty cells
                     while len(sheet.cell(rownum-counter,1).value)==0:
                         counter = counter+1
-                    writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,2).value, 0, 0, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                    writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), sheet.cell(rownum,2).value, 0, 0, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                     counter = 1
             elif len(sheet.cell(rownum,3).value)>7 & len(sheet.cell(rownum, sheet.ncols-1).value)==7:
                 if sheet.cell(rownum, sheet.ncols-1).value=="INJURED":
                     if len(sheet.cell(rownum,1).value)>0:
-                        writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell(rownum,1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), 0, sheet.cell(rownum,2).value, 0, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                        writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell(rownum,1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), 0, sheet.cell(rownum,2).value, 0, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                     else:
                     #This will repeat the province name for empty cells
                         while len(sheet.cell(rownum-counter,1).value)==0:
                             counter = counter+1
-                        writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), 0, sheet.cell(rownum,2).value, 0, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                        writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), 0, sheet.cell(rownum,2).value, 0, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                         counter = 1
                 elif sheet.cell(rownum, sheet.ncols-1).value=="MISSING":
                     if len(sheet.cell(rownum,1).value)>0:
-                        writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell(rownum,1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), 0, 0, sheet.cell(rownum,2).value, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                        writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell(rownum,1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), 0, 0, sheet.cell(rownum,2).value, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                     else:
                     #This will repeat the province name for empty cells
                         while len(sheet.cell(rownum-counter,1).value)==0:
                             counter = counter+1
-                        writer.writerow( (sheet.cell(0,1).value.encode('ascii', 'ignore').upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,3).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,5).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,6).value.encode('ascii', 'ignore').upper(), sheet.cell(rownum,7).value.encode('ascii', 'ignore').upper(), sheet.cell(3,1).value.encode('ascii', 'ignore').upper(), 0, 0, sheet.cell(rownum,2).value, sheet.cell(rownum, sheet.ncols-1).value.encode('ascii', 'ignore').upper() ) )
+                        writer.writerow( (sheet.cell(0,1).value.upper(), calamityname.upper(), sheet.cell((rownum-counter),1).value.upper(), sheet.cell(rownum,3).value.upper(), sheet.cell(rownum,5).value.upper(), sheet.cell(rownum,6).value.upper(), sheet.cell(rownum,7).value.upper(), sheet.cell(3,1).value.upper(), 0, 0, sheet.cell(rownum,2).value, sheet.cell(rownum, sheet.ncols-1).value.upper() ) )
                         counter = 1
 f.close()
 
