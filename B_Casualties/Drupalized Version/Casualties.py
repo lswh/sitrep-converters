@@ -136,3 +136,25 @@ f.close()
 print 'web2py'
 
 #This writes the text file that will be used for the Limesurvey version of the Casualties
+
+
+myfile = open('Casualties.txt','w')
+myfile.write("This is my first text file written in python\n")
+myfile.write("Testing tab \t It's working \n")
+myfile.close()
+
+
+     
+"""     writer = csv.writer(f, quoting=csv.QUOTE_ALL)
+
+     writer.writerow( ('Template', 'Series', 'Organisation', 'STD-WHO', 'STD-L0', 'STD-L1', 'STD-L2', 'STD-L3', 'STD-Lon', 'STD-Lat', 'STD-DATE', 'STD-TIME', 'CAS1', 'CAS2', 'CAS3', 'CAS4', 'CAS5', 'CAS6', 'CAS7', 'CAS8' ) )
+
+     counter = 0
+     for rownum in fshp.read().replace("\"","").split('\n'):
+          row = rownum.split(',')
+          if len(row) > 1 and counter > 0:
+               print unicode(row[4])
+               writer.writerow( ('Casualties', sheet.cell(2,1).value, organization, calamityname,'Philippines', 'REGION', row[2], 'MUNICIPALITY', 'STD-Lon', 'STD-Lat', aDate, aTime, row[4], row[5], row[7].strip() )) 
+          counter = 1
+f.close()
+print 'web2py'"""
